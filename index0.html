@@ -4,6 +4,7 @@
         <title>Matcha Majesty</title>
         <link rel="icon" type="image/x-icon" href="">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="script.js"></script>
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -23,6 +24,8 @@
                     <ul class="nav-links">
                         <li><a class="active" href="index0.html">Home</a></li>
                         <li><a href="reviews.html">Reviews</a></li>
+                    </ul>
+                    <ul class="nav-links">
                         <li><a id="lightmode" style="cursor: pointer;" onclick="lightMode()">Light Mode</a></li>
                     </ul>
                 </div>
@@ -91,37 +94,14 @@
 
 
 <script>
-
-    function lightMode(){
-        var element = document.body;
-        element.classList.toggle("lightmode");
-
-        var x = document.getElementById("lightmode");
-        if (x.innerHTML === "Light Mode") {
-            x.innerHTML = "Dark Mode";
-        } else {
-            x.innerHTML = "Light Mode";
-        }
-    }
-
-    var changeLocation = function(c){
-        if(c=='ny'){
-            map.setView(new L.LatLng(40.785091, -73.968285), 13);
-        }
-        if(c=='nj'){
-            map.setView(new L.LatLng(40.241044275602114, -74.48379166590641), 8);
-        }
-        return;    
-    };
-    
     var map = L.map('map').setView([40.785091, -73.968285], 13); // coordinates set to Central Park South
 
     // MARKERS //
     var marker = L.marker([40.804732, -73.951249]).addTo(map);
-    marker.bindPopup('<b>The Monkey Cup</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="9px" height="16px"><use href="#svg-star"></use></svg><br>$$<br><a href="TheMonkeyCup.html">Full Review</a>').openPopup();
+    marker.bindPopup('<b>The Monkey Cup</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="9px" height="16px"><use href="#svg-star"></use></svg><br>$$<br><a href="TheMonkeyCup_review.html">Full Review</a>').openPopup();
 
     var marker = L.marker([40.789854, -73.948267]).addTo(map);
-    marker.bindPopup('<b>Frenchy</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="9px" height="16px"><use href="#svg-star"></use></svg><br>$$$').openPopup();
+    marker.bindPopup('<b>Frenchy</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="9px" height="16px"><use href="#svg-star"></use></svg><br>$$$<a href="Frenchy_review.html">Full Review</a>').openPopup();
 
     var marker = L.marker([40.787010, -74.780380]).addTo(map);
     marker.bindPopup('<b>The Coffee Potter</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><br>$$').openPopup();

@@ -9,7 +9,7 @@
 
   --midtone1: #A0A584;
   --midtone2: #697153;
-  --midtone3: #494f38;
+  --midtone3: #4e543c;
 
   --darktone1: #43362A;
   --darktone2: #1C150E;
@@ -64,10 +64,10 @@ body{
 ul.nav-links{
     list-style: none;
     display: flex;
-    margin: 0;
+    margin: 24px;
     padding: 0;
     background-color: var(--accent1);
-    border-radius: 0 20px 20px 0;
+    border-radius: 20px;
 }
 ul.nav-links > li, a{
   /*color: var(--lighttone1);*/
@@ -85,12 +85,13 @@ ul.nav-links > li > a{
   background-color: var(--accent3);
   color: #1C150E;
   /*color: var(--lighttone1);*/
+  border-radius: 20px;
 }
 .nav-links > li > a:hover{
   background-color: var(--accent3);
   color: #1C150E;
   /*color: var(--lighttone1);*/
-  border-radius: 0 20px 20px 0;
+  border-radius: 20px;
 }
 
 
