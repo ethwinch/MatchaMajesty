@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>All Reviews | Matcha Majesty</title>
+        <link rel="icon" type="image/x-icon" href="">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="script.js"></script>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+
+        <meta name="description" content="matcha latte reviews and ratings">
+        <meta name="keywords" content="matcha, latte, drink, iced, taste, flavor, tea, japanese tea">
+    </head>
+
+    <body>
+        <div class="hero-container">
+            <div class="hero-image">
+                <div class="nav">
+                    <ul class="nav-links">
+                        <li><a href="index0.html">Home</a></li>
+                        <li><a class="active" href="reviews.html">Reviews</a></li>
+                    </ul>
+                    <ul class="nav-links">
+                        <li><a id="lightmode" style="cursor: pointer;" onclick="lightMode()">Light Mode</a></li>
+                    </ul>
+                </div>
+                <div class="hero-text">
+                    <h1>MATCHA MAJESTY</h1>
+                    <h2>Your guide in finding the best cup of Matcha.</h2>
+                </div>
+            </div>
+        </div>
+        <div class="body-text">
+            <h1 style="text-align: center;">All Reviews</h1>
+        </div>
+
+
+        <div id="sortBtns">
+            <button class="btn active" onclick="filterSelection('all')">All</button>
+            <button class="drop-btn" onclick="dropDown()">Star Rating</button>
+            <div id="dropDown" class="drop-content">
+                <a onclick="filterSelection('5s')">5 Stars</a>
+                <a onclick="filterSelection('4s')">4 Stars</a>
+                <a onclick="filterSelection('3s')">3 Stars</a>
+                <a onclick="filterSelection('2s')">2 Stars</a>
+                <a onclick="filterSelection('1s')">1 Stars</a>
+            </div>
+        </div>
+
+
+        <div class="review-list">
+            <div class="review-container 5s">
+                <div class="review-img">
+                    <img src="https://i.postimg.cc/RZ6kKLqS/Frenchy2.avif"/>
+                </div>
+                <div class="review-text">
+                    <h3>Frenchy</h3>
+                    <h3>
+                        <svg height="24px" width="24px" version="1.1" id="svg-star" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 47.94 47.94" xml:space="preserve" fill="#000000">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier"> 
+                                <path id="svg-star" style="fill:#f0b62d;" d="M26.285,2.486l5.407,10.956c0.376,0.762,1.103,1.29,1.944,1.412l12.091,1.757 c2.118,0.308,2.963,2.91,1.431,4.403l-8.749,8.528c-0.608,0.593-0.886,1.448-0.742,2.285l2.065,12.042 c0.362,2.109-1.852,3.717-3.746,2.722l-10.814-5.685c-0.752-0.395-1.651-0.395-2.403,0l-10.814,5.685 c-1.894,0.996-4.108-0.613-3.746-2.722l2.065-12.042c0.144-0.837-0.134-1.692-0.742-2.285l-8.749-8.528 c-1.532-1.494-0.687-4.096,1.431-4.403l12.091-1.757c0.841-0.122,1.568-0.65,1.944-1.412l5.407-10.956 C22.602,0.567,25.338,0.567,26.285,2.486z"></path>
+                            </g>
+                        </svg>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                    </h3>
+                    <p>A rich umami taste that leaves you feeling refreshed.</p>
+                    <a href="Frenchy_review.html">Read Full Review ➜</a>
+                </div>
+            </div>
+            <div class="review-container 5s">
+                <div class="review-img">
+                    <img src="assets/"/>
+                </div>
+                <div class="review-text">
+                    <h3>The Monkey Cup</h3>
+                    <h3>
+                        <svg height="24px" width="24px" version="1.1" id="svg-star" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 47.94 47.94" xml:space="preserve" fill="#000000">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier"> 
+                                <path id="svg-star" style="fill:#f0b62d;" d="M26.285,2.486l5.407,10.956c0.376,0.762,1.103,1.29,1.944,1.412l12.091,1.757 c2.118,0.308,2.963,2.91,1.431,4.403l-8.749,8.528c-0.608,0.593-0.886,1.448-0.742,2.285l2.065,12.042 c0.362,2.109-1.852,3.717-3.746,2.722l-10.814-5.685c-0.752-0.395-1.651-0.395-2.403,0l-10.814,5.685 c-1.894,0.996-4.108-0.613-3.746-2.722l2.065-12.042c0.144-0.837-0.134-1.692-0.742-2.285l-8.749-8.528 c-1.532-1.494-0.687-4.096,1.431-4.403l12.091-1.757c0.841-0.122,1.568-0.65,1.944-1.412l5.407-10.956 C22.602,0.567,25.338,0.567,26.285,2.486z"></path>
+                            </g>
+                        </svg>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                    </h3>
+                    <p>A light and subtle sweet taste.</p>
+                    <a href="TheMonkeyCup_review.html">Read Full Review ➜</a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    
+
+    <!-- AD SPACE -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5708330331910324"
+        crossorigin="anonymous"></script>
+    <!-- banner-ad -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-5708330331910324"
+        data-ad-slot="6285450821"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    
+</html>
+
+
+<script>
+    function dropDown(){
+        document.getElementById("dropDown").classList.toggle("show");
+    }
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.drop-btn')) {
+            var dropdowns = document.getElementsByClassName("drop-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
+<script>
+    // FILTER STORES BY PREFERENCES
+    filterSelection("all")
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("review-container");
+
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+            removeClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
+        }
+    }
+    function addClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+        }
+    }
+    function removeClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);     
+            }
+        }
+        element.className = arr1.join(" ");
+    }
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("sortBtns");
+    var btns = btnContainer.getElementsByClassName("btn");
+
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function(){
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+
+</script>

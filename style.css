@@ -9,7 +9,7 @@
 
   --midtone1: #A0A584;
   --midtone2: #697153;
-  --midtone3: #4e543c;
+  --midtone3: #414632;
 
   --darktone1: #43362A;
   --darktone2: #1C150E;
@@ -46,6 +46,7 @@ body{
     width: 90%;
     margin: auto;
     border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .leaflet-popup-content{
   text-align: center;
@@ -68,6 +69,7 @@ ul.nav-links{
     padding: 0;
     background-color: var(--accent1);
     border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 ul.nav-links > li, a{
   /*color: var(--lighttone1);*/
@@ -77,6 +79,7 @@ ul.nav-links > li, a{
   display: block;
   padding: 0;
   margin: 0;
+  transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
 }
 ul.nav-links > li > a{
   padding: 1vw 2vw;
@@ -100,6 +103,7 @@ ul.nav-links > li > a{
   padding: 96px 12px 96px 12px;
   /*color: var(--lighttone1);*/
   color: #F5D8D9;
+  text-shadow: 1.3px 1.3px rgba(0, 0, 0, 0.2), 1px 5px rgba(0, 0, 0, 0.2);
 }
 .hero-image{
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.squarespace-cdn.com%2Fcontent%2Fv1%2F56a19dc589a60afe613cef70%2F1579834767427-ZF8BU3MRHG6YVQAK43XM%2Fimage-asset.jpeg&f=1&nofb=1&ipt=c32c4bf427f638a35c6a6a3c1577274f1d29f842ce6486d01573082f83b81323");
@@ -120,6 +124,7 @@ ul.nav-links > li > a{
 .map-key{
   background-color: var(--midtone3); 
   border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   padding: 12px 48px 12px 48px;
   margin: 4rem 0 4rem 0;
@@ -152,13 +157,144 @@ button{
   border-radius: 8px;
   background-color: var(--accent3);
   color: var(--lighttone1);
-  font-size: 18px;
+  padding: 16px;
+  font-size: 16px;
   font-weight: bold;
-  padding: 18px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: background-color 0.3s, color 0.3s;
 }
 button:hover{
+  color: var(--darktone2);
   background-color: var(--accent1);
 }
 button:active{
   background-color: var(--accent2);
+}
+
+
+
+
+.review-list{
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 2rem;
+  row-gap: 8px;
+  margin: 4rem 4rem 4rem 4rem;
+}
+.review-container{
+  display: none;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  background-color: var(--midtone3);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.show {
+  display: block;
+}
+.review-container::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+.review-img{
+  height: 250px;
+  width: 40%;
+  float: left;
+  overflow: hidden;
+}
+.review-img > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.review-text{
+  color: var(--lighttone1);
+  width: 39%;
+  float: left;
+  padding: 12px 48px 12px 48px;
+}
+
+#sortBtns{
+  margin-left: 4rem;
+}
+
+
+
+
+
+.drop-content{
+  cursor: pointer;
+  border-style: none;
+  border-radius: 8px;
+  background-color: var(--accent2);
+  color: var(--lighttone1);
+  padding: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: background-color 0.3s, color 0.3s;
+
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.drop-content a{
+  color: var(--lighttone1);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+.drop-content a:hover{
+  color: var(--darktone2);
+}
+.drop-content a, .show {
+  display: block;
+}
+
+
+.img-container{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.body-text > .img-container > img{
+  border-radius: 20px;
+  max-width: 48%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+
+
+/*PHONES*/
+@media (max-width: 900px){
+  #map{
+    margin: auto;
+    width: 94%;
+  }
+  .body-text{
+    margin: 2rem 1rem 2rem 1rem;
+  }
+  .review-list{
+    grid-template-columns: auto;
+    margin: 4rem 1rem 0 1rem;
+  }
+  .review-img{
+    width: 100%;
+    height: 150px;
+  }
+  .review-container{
+    margin: 1rem 0 1rem 0;
+  }
+  .location-btns > button{
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  #sortBtns{
+    margin-left: 1rem;
+  }
 }
