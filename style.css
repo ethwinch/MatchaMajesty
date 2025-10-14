@@ -38,6 +38,10 @@ body{
   background-color: var(--darktone2); 
   color: var(--lighttone1);
 }
+p > a{
+  color: var(--accent1);
+  display: inline;
+}
 
 
 
@@ -222,6 +226,7 @@ button:active{
 
 
 .review-container-visible{
+  margin-bottom: 12px;
   width: 100%;
   overflow: hidden;
   border-radius: 18px;
