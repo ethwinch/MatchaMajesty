@@ -1,3 +1,9 @@
+<!--
+<?php
+    session_start();
+?>
+-->
+
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -26,7 +32,7 @@
                         <li><a href="reviews.html">Reviews</a></li>
                     </ul>
                     <ul class="nav-links">
-                        <li><a id="lightmode" style="cursor: pointer;" onclick="lightMode()">Light Mode</a></li>
+                        <li><a id="themeColor" style="cursor: pointer;" onclick="updateTheme()">Light Mode</a></li>
                     </ul>
                 </div>
                 <div class="hero-text">
@@ -36,6 +42,10 @@
             </div>
         </div>
         <div class="body-text">
+            <a href="ChaChaMatcha_review.html" class="new-review">
+                <h4><i>Check out the latest review ➜</i> Cha Cha Matcha, REVISITED!</h4>
+            </a>
+
             <p><b>It's time to spill the tea on matcha!</b> Since matcha's rise in popularity 
             many places have tried to cash in on the hype. Unfortunately, most of these places never bothered to 
             learn how to make a decent cup. After way too many bad matchas and bad recommendations from people who love the 
@@ -71,33 +81,40 @@
                 <button onclick="changeLocation('nj')">New Jersey</button>
             </div>
         </div>
+
         <div id="map"></div>
+
+        <!-- AD SPACE -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5708330331910324"
+            crossorigin="anonymous"></script>
+        <!-- banner-ad -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-5708330331910324"
+            data-ad-slot="6285450821"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        <div class="footer">
+            <div class="footer-text">
+                <p>All rights reserved.</p>
+            </div>
+        </div>
     </body>
 
     
     <!--
     <svg width="16px" height="16px"><use href="#svg-star"></use></svg>
     -->
-
-
-    <!-- AD SPACE -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5708330331910324"
-        crossorigin="anonymous"></script>
-    <!-- banner-ad -->
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-5708330331910324"
-        data-ad-slot="6285450821"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
     
 </html>
 
 
 <script>
+    
     var map = L.map('map').setView([40.785091, -73.968285], 13); // coordinates set to Central Park South
 
     // MARKERS //
@@ -152,6 +169,10 @@
     var marker = L.marker([40.767053, -73.982867]).addTo(map);
     marker.bindPopup('<b>Paris Baguette</b><br><svg width="8px" height="16px"><use href="#svg-star"></use></svg><br>$6 S<a href="ParisBaguette_review.html">Full Review</a>').openPopup();
 
+    var marker = L.marker([40.763593, -73.984866]).addTo(map);
+    marker.bindPopup('<b>Ground Central Coffee Company</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><br>$5.40 S<a href="GroundCentral_review.html">Full Review</a>').openPopup();
+
+
 
 
 
@@ -162,3 +183,9 @@
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 </script>
+
+<!--
+<?php
+    $_SESSION["colorMode"] = "lightMode";
+?>
+-->

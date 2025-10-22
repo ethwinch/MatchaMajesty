@@ -15,7 +15,7 @@
   --darktone2: #1C150E;
 }
 
-.lightmode{
+.themeColor{
   --accent3: #C8B272;
   --accent2: #A88B4C;
   --accent1: #8B723C;
@@ -31,6 +31,10 @@
   --darktone1: #EADDC1;
 }
 
+
+html{
+  scroll-behavior: smooth;
+}
 
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -117,13 +121,46 @@ ul.nav-links > li > a{
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
+  background-attachment: fixed; /* parallax scrolling */
 }
 
+
+
+.new-review{
+  border-style: double;
+  border-color: var(--accent3);
+  border-radius: 8px;
+  width: 100%;
+  padding: 1px 0 1px 0;
+
+  margin: 4rem 0rem 4rem 0rem;
+
+  text-align: center;
+  color: var(--lighttone1);
+
+  transition: ease 0.3s;
+}
+.new-review:hover{
+  text-shadow: 0 0 6px var(--accent1);
+}
 
 .body-text{
   margin: 4rem 16rem 4rem 16rem;
   line-height: 2;
 }
+
+
+.footer{
+  background-color: var(--darktone1);
+  width: 100%;
+  text-align: center;
+}
+.footer-text{
+  padding: 2rem 16rem 2rem 16rem;
+}
+
+
 
 .map-key{
   background-color: var(--midtone3); 
@@ -141,13 +178,13 @@ ul.nav-links > li > a{
 .map-key-left{
   text-align: center;
   float: left;
-  width: 48%;
+  width: 46%;
   padding-right: 24px;
 }
 .map-key-right{
   text-align: center;
   float: left;
-  width: 48%;
+  width: 46%;
 }
 
 .location-btns{
@@ -186,16 +223,18 @@ button:active{
   margin: 4rem 4rem 4rem 4rem;
 }
 .review-container{
-  display: none;
+  /*display: none;*/
   width: 100%;
   overflow: hidden;
   border-radius: 18px;
   background-color: var(--midtone3);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+/*
 .show {
   display: block;
 }
+  */
 .review-container::after{
   content: "";
   clear: both;
@@ -298,6 +337,9 @@ button:active{
   .body-text{
     margin: 2rem 1rem 2rem 1rem;
   }
+  .footer-text{
+  padding: 2rem 1rem 2rem 1rem;
+  }
   .review-list{
     grid-template-columns: auto;
     margin: 4rem 1rem 0 1rem;
@@ -316,5 +358,11 @@ button:active{
 
   #sortBtns{
     margin-left: 1rem;
+  }
+  .review-container > .review-text{
+    width: 100%;
+  }
+  .review-container > .review-img{
+    width: 100%;
   }
 }

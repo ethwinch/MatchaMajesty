@@ -26,7 +26,7 @@
                         <li><a class="active" href="reviews.html">Reviews</a></li>
                     </ul>
                     <ul class="nav-links">
-                        <li><a id="lightmode" style="cursor: pointer;" onclick="lightMode()">Light Mode</a></li>
+                        <li><a id="themeColor" style="cursor: pointer;" onclick="updateTheme()">Light Mode</a></li>
                     </ul>
                 </div>
                 <div class="hero-text">
@@ -41,6 +41,19 @@
 
 
         <div id="sortBtns">
+            <label class="btn">
+                <input type="checkbox" checked="checked" onclick="filterSelection('all')">All
+            </label>
+            <button class="drop-btn" onclick="dropDownStars()">Star Rating</button>
+            <div id="dropDownStars" class="drop-content">
+                <input type="checkbox" onclick="filterSelection('5s')">5 Stars
+                <input type="checkbox" onclick="filterSelection('4s')">4 Stars
+                <input type="checkbox" onclick="filterSelection('3s')">3 Stars
+                <input type="checkbox" onclick="filterSelection('2s')">2 Stars
+                <input type="checkbox" onclick="filterSelection('1s')">1 Stars
+            </div>
+
+            <!--
             <button class="btn active" onclick="filterSelection('all')">All</button>
 
             <button class="drop-btn" onclick="dropDown()">Star Rating</button>
@@ -51,12 +64,13 @@
                 <a onclick="filterSelection('2s')">2 Stars</a>
                 <a onclick="filterSelection('1s')">1 Stars</a>
             </div>
+            -->
 
-            <button class="drop-btn" onclick="dropDown()">Price</button>
-            <div id="dropDown" class="drop-content">
-                <a onclick="filterSelection('$$$')">$7-8+</a> <!--$7/$8-->
-                <a onclick="filterSelection('$$')">$5-6.99</a> <!--$5/$6-->
-                <a onclick="filterSelection('$')">$3-4.99</a> <!--$3/$4-->
+            <button class="drop-btn" onclick="dropDownPrice()">Price</button>
+            <div id="dropDownPrice" class="drop-content">
+                <input type="checkbox" onclick="filterSelection('$$$')">$7-8+ <!--$7/$8-->
+                <input type="checkbox" onclick="filterSelection('$$')">$5-6.99 <!--$5/$6-->
+                <input type="checkbox" onclick="filterSelection('$')">$3-4.99 <!--$3/$4-->
             </div>
         </div>
 
@@ -292,31 +306,55 @@
                     <a href="ParisBaguette_review.html">Read Full Review ➜</a>
                 </div>
             </div>
+            
+            <div class="review-container 3s $$">
+                <div class="review-img">
+                    <img src="https://i.postimg.cc/8zYW3mqz/Ground-Central1.avif"/>
+                </div>
+                <div class="review-text">
+                    <h3>Ground Central Coffee Company</h3>
+                    <h3>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                    </h3>
+                    <p>Decent, with a very mild umami flavor. The matcha taste isn't very strong.</p>
+                    <a href="GroundCentral_review.html">Read Full Review ➜</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- AD SPACE -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5708330331910324"
+            crossorigin="anonymous"></script>
+        <!-- banner-ad -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-5708330331910324"
+            data-ad-slot="6285450821"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        <div class="footer">
+            <div class="footer-text">
+                <p>All rights reserved.</p>
+            </div>
         </div>
     </body>
-
-    
-
-    <!-- AD SPACE -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5708330331910324"
-        crossorigin="anonymous"></script>
-    <!-- banner-ad -->
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-5708330331910324"
-        data-ad-slot="6285450821"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    
 </html>
 
 
 <script>
-    function dropDown(){
-        document.getElementById("dropDown").classList.toggle("show");
+    function dropDownStars(){
+        document.getElementById("dropDownStars").classList.toggle("show");
+    }
+    function dropDownPrice(){
+        document.getElementById("dropDownPrice").classList.toggle("show");
     }
     // Close the dropdown if the user clicks outside of it
     window.onclick = function(event) {
@@ -334,31 +372,31 @@
 </script>
 
 <script>
-    // FILTER STORES BY PREFERENCES
-    filterSelection("all")
-    function filterSelection(c) {
+    // FILTER CAFES BY PREFERENCES
+    filterSelection("all");
+    function filterSelection(c){
         var x, i;
         x = document.getElementsByClassName("review-container");
 
         if (c == "all") c = "";
-        for (i = 0; i < x.length; i++) {
+        for (i = 0; i < x.length; i++){
             removeClass(x[i], "show");
             if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
         }
     }
-    function addClass(element, name) {
+    function addClass(element, name){
         var i, arr1, arr2;
         arr1 = element.className.split(" ");
         arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
+        for (i = 0; i < arr2.length; i++){
             if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
         }
     }
-    function removeClass(element, name) {
+    function removeClass(element, name){
         var i, arr1, arr2;
         arr1 = element.className.split(" ");
         arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
+        for (i = 0; i < arr2.length; i++){
             while (arr1.indexOf(arr2[i]) > -1) {
             arr1.splice(arr1.indexOf(arr2[i]), 1);     
             }
@@ -369,7 +407,7 @@
     var btnContainer = document.getElementById("sortBtns");
     var btns = btnContainer.getElementsByClassName("btn");
 
-    for (var i = 0; i < btns.length; i++) {
+    for (var i = 0; i < btns.length; i++){
         btns[i].addEventListener("click", function(){
             var current = document.getElementsByClassName("active");
             current[0].className = current[0].className.replace(" active", "");

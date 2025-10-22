@@ -1,15 +1,44 @@
 
-    function lightMode(){
-        var element = document.body;
-        element.classList.toggle("lightmode");
+    var themeMode = localStorage.getItem("themeColor", "dark"); // assign themeColor as dark as default
+    const updateTheme = () => {
+        if (themeMode == "light"){
+            themeMode = "dark";
+        }else{
+            themeMode = "light";
+        }
+        localStorage.setItem("themeColor", themeMode);
+        toggleTheme();
+    };
 
-        var x = document.getElementById("lightmode");
+    function toggleTheme(){
+        var element = document.body;
+        element.classList.toggle("themeColor");
+
+        var x = document.getElementById("themeColor");
         if (x.innerHTML === "Light Mode") {
             x.innerHTML = "Dark Mode";
         } else {
             x.innerHTML = "Light Mode";
         }
-    }
+    };
+
+    /* Make theme persistant */
+    function themeCheck(){
+        var themeMode = localStorage.getItem("themeColor");
+        var x = document.getElementById("themeColor");
+        if(themeMode == "light"){
+            toggleTheme();
+        }
+    };
+    window.onload = themeCheck;
+
+
+
+
+
+
+
+    
 
     var changeLocation = function(c){
         if(c=='ny'){
