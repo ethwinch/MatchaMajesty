@@ -40,19 +40,27 @@
         </div>
 
 
+        <!--
         <div id="sortBtns">
             <label class="btn">
                 <input type="checkbox" checked="checked" onclick="filterSelection('all')">All
             </label>
             <button class="drop-btn" onclick="dropDownStars()">Star Rating</button>
             <div id="dropDownStars" class="drop-content">
-                <input type="checkbox" onclick="filterSelection('5s')">5 Stars
-                <input type="checkbox" onclick="filterSelection('4s')">4 Stars
-                <input type="checkbox" onclick="filterSelection('3s')">3 Stars
-                <input type="checkbox" onclick="filterSelection('2s')">2 Stars
-                <input type="checkbox" onclick="filterSelection('1s')">1 Stars
+                <div class="filter">
+                    <div class="stars">
+                        <div class="checkbox">
+                            <input type="checkbox" rel="5s" onchange="change();">5 Stars
+                            <input type="checkbox" rel="4s" onchange="change();">4 Stars
+                            <input type="checkbox" rel="3s" onchange="change();">3 Stars
+                            <input type="checkbox" rel="2s" onchange="change();">2 Stars
+                            <input type="checkbox" rel="1s" onchange="change();">1 Stars
+                        </div>
+                    </div>
+                </div>
             </div>
-
+        </div>
+-->
             <!--
             <button class="btn active" onclick="filterSelection('all')">All</button>
 
@@ -65,14 +73,97 @@
                 <a onclick="filterSelection('1s')">1 Stars</a>
             </div>
             -->
-
+<!--
+        <div id="sortBtns">
             <button class="drop-btn" onclick="dropDownPrice()">Price</button>
             <div id="dropDownPrice" class="drop-content">
-                <input type="checkbox" onclick="filterSelection('$$$')">$7-8+ <!--$7/$8-->
-                <input type="checkbox" onclick="filterSelection('$$')">$5-6.99 <!--$5/$6-->
-                <input type="checkbox" onclick="filterSelection('$')">$3-4.99 <!--$3/$4-->
+                <div class="filter">
+                <div class="price">
+                    <div class="checkbox">
+                        <input type="checkbox" rel="$$$" onchange="change();">$7-8+ 
+                        <input type="checkbox" rel="$$" onchange="change();">$5-6.99
+                        <input type="checkbox" rel="$" onchange="change();">$3-4.99 
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
+
+        <div id="sortBtns">
+            <button class="drop-btn" onclick="dropDownFlavor()">Flavor</button>
+            <div id="dropDownFlavor" class="drop-content">
+                <div class="filter">
+                <div class="flavor">
+                    <div class="checkbox">
+                        <input type="checkbox" rel="umami" onchange="change();">Umami
+                        <input type="checkbox" rel="nutty" onchange="change();">Nutty
+                        <input type="checkbox" rel="sweet" onchange="change();">Sweet
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+-->
+
+
+
+
+
+
+        
+        <div class="filter">
+            <div class="filter-grid">
+                <div class="filter-grid-head">
+                    <h3>Sort by...</h3>
+                </div>
+                <div class="filter-grid-star">
+                <h4>Star Rating</h4>
+                <div class="stars">
+                    <div class="checkbox">
+                        <input type="checkbox" rel="5s" onchange="change();">5 Stars
+                        <br>
+                        <input type="checkbox" rel="4s" onchange="change();">4 Stars
+                        <br>
+                        <input type="checkbox" rel="3s" onchange="change();">3 Stars
+                        <br>
+                        <input type="checkbox" rel="2s" onchange="change();">2 Stars
+                        <br>
+                        <input type="checkbox" rel="1s" onchange="change();">1 Stars
+                    </div>
+                </div>
+                </div>
+
+                <div class="filter-grid-price">
+                <h4>Price</h4>
+                <div class="price">
+                    <div class="checkbox">
+                        <input type="checkbox" rel="$$$" onchange="change();">$7-8+ <!--$7/$8-->
+                        <br>
+                        <input type="checkbox" rel="$$" onchange="change();">$5-6.99 <!--$5/$6-->
+                        <br>
+                        <input type="checkbox" rel="$" onchange="change();">$3-4.99 <!--$3/$4-->
+                    </div>
+                </div>
+                </div>
+
+                <div class="filter-grid-flavor">
+                <h4>Flavor</h4>
+                <div class="flavor">
+                    <div class="checkbox">
+                        <input type="checkbox" rel="umami" onchange="change();">Umami
+                        <br>
+                        <input type="checkbox" rel="nutty" onchange="change();">Nutty
+                        <br>
+                        <input type="checkbox" rel="sweet" onchange="change();">Sweet
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
 
 
         <div class="review-list">
@@ -168,7 +259,7 @@
 
             <div class="review-container 1s $$$">
                 <div class="review-img">
-                    <img src="[INSERT IMG]"/>
+                    <img src="assets/ChaChaMatcha2.HEIC"/> <!-- https://files.catbox.moe/wxeaow.HEIC -->
                 </div>
                 <div class="review-text">
                     <h3>Cha Cha Matcha</h3>
@@ -356,6 +447,9 @@
     function dropDownPrice(){
         document.getElementById("dropDownPrice").classList.toggle("show");
     }
+    function dropDownFlavor(){
+        document.getElementById("dropDownFlavor").classList.toggle("show");
+    }
     // Close the dropdown if the user clicks outside of it
     window.onclick = function(event) {
         if (!event.target.matches('.drop-btn')) {
@@ -372,6 +466,96 @@
 </script>
 
 <script>
+
+function change(){
+    var starsCheckBox = document.querySelectorAll(".stars input[type='checkbox']");
+    var priceCheckBox = document.querySelectorAll(".price input[type='checkbox']");
+    var flavorCheckBox = document.querySelectorAll(".flavor input[type='checkbox']");
+    var filters = {
+        stars: getClassOfCheckedCheckboxes(starsCheckBox),
+        price: getClassOfCheckedCheckboxes(priceCheckBox),
+        flavor: getClassOfCheckedCheckboxes(flavorCheckBox)
+    };
+    filterResults(filters);
+}
+
+function getClassOfCheckedCheckboxes(checkboxes){
+    var classes = [];
+    
+    if (checkboxes && checkboxes.length > 0) {
+        for (var i = 0; i < checkboxes.length; i++) {
+            var cb = checkboxes[i];
+            if (cb.checked) {
+                classes.push(cb.getAttribute("rel"));
+            }
+        }
+    }
+    return classes;
+}
+
+function filterResults(filters) {
+  var rElems = document.querySelectorAll(".review-list > div");
+  var hiddenElems = [];
+
+  if (!rElems || rElems.length <= 0) {
+    return;
+  }
+
+  for (var i = 0; i < rElems.length; i++) {
+    var el = rElems[i];
+
+    if (filters.stars.length > 0) {
+      var isHidden = true;
+
+      for (var j = 0; j < filters.stars.length; j++) {
+        var filter = filters.stars[j];
+
+        if (el.classList.contains(filter)) {
+          isHidden = false;
+          break;
+        }
+      }
+
+      if (isHidden) {
+        hiddenElems.push(el);
+      }
+    }
+
+    if (filters.price.length > 0) {
+      var isHidden = true;
+
+      for (var j = 0; j < filters.price.length; j++) {
+        var filter = filters.price[j];
+
+        if (el.classList.contains(filter)) {
+          isHidden = false;
+          break;
+        }
+      }
+
+      if (isHidden) {
+        hiddenElems.push(el);
+      }
+    }
+  }
+
+  for (var i = 0; i < rElems.length; i++) {
+    rElems[i].style.display = "block";
+  }
+
+  if (hiddenElems.length <= 0) {
+    return;
+  }
+
+  for (var i = 0; i < hiddenElems.length; i++) {
+    hiddenElems[i].style.display = "none";
+  }
+}
+    
+
+
+
+    /*
     // FILTER CAFES BY PREFERENCES
     filterSelection("all");
     function filterSelection(c){
@@ -384,6 +568,7 @@
             if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
         }
     }
+
     function addClass(element, name){
         var i, arr1, arr2;
         arr1 = element.className.split(" ");
@@ -414,5 +599,6 @@
             this.className += " active";
         });
     }
+    */
 
 </script>

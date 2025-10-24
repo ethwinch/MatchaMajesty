@@ -15,6 +15,7 @@
   --darktone2: #1C150E;
 }
 
+/* Light Mode */
 .themeColor{
   --accent3: #C8B272;
   --accent2: #A88B4C;
@@ -214,6 +215,35 @@ button:active{
 
 
 
+.filter-grid{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+  margin: 0 4rem 2rem 4rem;
+  padding: 0 1rem 1rem 1rem;
+}
+.filter-grid-head{
+  grid-column: 1 / span 3;
+
+  text-align: center;
+
+  border-style: double;
+  border-radius: 8px;
+  border-color: var(--accent1);
+}
+.filter-grid-star, .filter-grid-price, .filter-grid-flavor{
+  justify-self: center;
+}
+div.filter div.filter-grid div.filter-grid-price div.price div.checkbox input{
+  margin: 0 0.3rem 0.5rem 0;
+}
+div.filter div.filter-grid div.filter-grid-star div.stars div.checkbox input{
+  margin: 0 0.3rem 0.5rem 0;
+}
+div.filter div.filter-grid div.filter-grid-flavor div.flavor div.checkbox input{
+  margin: 0 0.3rem 0.5rem 0;
+}
+
 
 .review-list{
   display: grid;
@@ -257,11 +287,11 @@ button:active{
   float: left;
   padding: 12px 48px 12px 48px;
 }
-
+/*
 #sortBtns{
   margin-left: 4rem;
 }
-
+*/
 
 
 .review-container-visible{
@@ -280,7 +310,7 @@ button:active{
 
 
 
-
+/*
 .drop-content{
   cursor: pointer;
   border-style: none;
@@ -312,7 +342,7 @@ button:active{
 .drop-content a, .show {
   display: block;
 }
-
+*/
 
 .img-container{
   margin-top: 2rem;
