@@ -38,79 +38,7 @@
         <div class="body-text">
             <h1 style="text-align: center;">All Reviews</h1>
         </div>
-
-
-        <!--
-        <div id="sortBtns">
-            <label class="btn">
-                <input type="checkbox" checked="checked" onclick="filterSelection('all')">All
-            </label>
-            <button class="drop-btn" onclick="dropDownStars()">Star Rating</button>
-            <div id="dropDownStars" class="drop-content">
-                <div class="filter">
-                    <div class="stars">
-                        <div class="checkbox">
-                            <input type="checkbox" rel="5s" onchange="change();">5 Stars
-                            <input type="checkbox" rel="4s" onchange="change();">4 Stars
-                            <input type="checkbox" rel="3s" onchange="change();">3 Stars
-                            <input type="checkbox" rel="2s" onchange="change();">2 Stars
-                            <input type="checkbox" rel="1s" onchange="change();">1 Stars
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
--->
-            <!--
-            <button class="btn active" onclick="filterSelection('all')">All</button>
-
-            <button class="drop-btn" onclick="dropDown()">Star Rating</button>
-            <div id="dropDown" class="drop-content">
-                <a onclick="filterSelection('5s')">5 Stars</a>
-                <a onclick="filterSelection('4s')">4 Stars</a>
-                <a onclick="filterSelection('3s')">3 Stars</a>
-                <a onclick="filterSelection('2s')">2 Stars</a>
-                <a onclick="filterSelection('1s')">1 Stars</a>
-            </div>
-            -->
-<!--
-        <div id="sortBtns">
-            <button class="drop-btn" onclick="dropDownPrice()">Price</button>
-            <div id="dropDownPrice" class="drop-content">
-                <div class="filter">
-                <div class="price">
-                    <div class="checkbox">
-                        <input type="checkbox" rel="$$$" onchange="change();">$7-8+ 
-                        <input type="checkbox" rel="$$" onchange="change();">$5-6.99
-                        <input type="checkbox" rel="$" onchange="change();">$3-4.99 
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="sortBtns">
-            <button class="drop-btn" onclick="dropDownFlavor()">Flavor</button>
-            <div id="dropDownFlavor" class="drop-content">
-                <div class="filter">
-                <div class="flavor">
-                    <div class="checkbox">
-                        <input type="checkbox" rel="umami" onchange="change();">Umami
-                        <input type="checkbox" rel="nutty" onchange="change();">Nutty
-                        <input type="checkbox" rel="sweet" onchange="change();">Sweet
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
--->
-
-
-
-
-
-
-        
+    
         <div class="filter">
             <div class="filter-grid">
                 <div class="filter-grid-head">
@@ -155,6 +83,8 @@
                         <input type="checkbox" rel="nutty" onchange="change();">Nutty
                         <br>
                         <input type="checkbox" rel="sweet" onchange="change();">Sweet
+                        <br>
+                        <input type="checkbox" rel="mild" onchange="change();">Mild
                     </div>
                 </div>
                 </div>
@@ -167,9 +97,9 @@
 
 
         <div class="review-list">
-            <div class="review-container 5s $$">
+            <div class="review-container 4s $$ umami">
                 <div class="review-img">
-                    <img src="https://i.postimg.cc/RZ6kKLqS/Frenchy2.avif"/>
+                    <img src="https://i.postimg.cc/RZ6kKLqS/Frenchy2.avif" alt="A light green, smooth matcha with some ice."/>
                 </div>
                 <div class="review-text">
                     <h3>Frenchy</h3>
@@ -184,15 +114,15 @@
                         <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
                         <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
                         <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
-                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                        <svg width="12px" height="24px"><use href="#svg-star"></use></svg>
                     </h3>
-                    <p>A rich umami taste that leaves you feeling refreshed.</p>
+                    <p>A light umami taste that leaves you feeling refreshed.</p>
                     <a href="Frenchy_review.html">Read Full Review ➜</a>
                 </div>
             </div>
-            <div class="review-container 5s $$">
+            <div class="review-container 5s $$ sweet">
                 <div class="review-img">
-                    <img src="assets/"/>
+                    <img src="" alt=""/>
                 </div>
                 <div class="review-text">
                     <h3>The Monkey Cup</h3>
@@ -208,9 +138,9 @@
                 </div>
             </div>
 
-            <div class="review-container 5s $$">
+            <div class="review-container 5s $$ sweet">
                 <div class="review-img">
-                    <img src="https://i.postimg.cc/kMhBFM8s/Coffee-Potter1.avif"/>
+                    <img src="https://i.postimg.cc/kMhBFM8s/Coffee-Potter1.avif" alt="A light green matcha latte with some ice. The matcha has dark green flecks that become more concetrated towards the bottom of the cup."/>
                 </div>
                 <div class="review-text">
                     <h3>The Coffee Potter</h3>
@@ -226,9 +156,9 @@
                 </div>
             </div>
 
-            <div class="review-container 1s $$">
+            <div class="review-container 1s $$ bitter">
                 <div class="review-img">
-                    <img src="https://i.postimg.cc/wjcpTFQc/Turtle-Gut.avif"/>
+                    <img src="https://i.postimg.cc/wjcpTFQc/Turtle-Gut.avif" alt="A dark, murky green matcha latte with some ice."/>
                 </div>
                 <div class="review-text">
                     <h3>Turtle Gut</h3>
@@ -240,9 +170,9 @@
                 </div>
             </div>
 
-            <div class="review-container 3s $$">
+            <div class="review-container 3s $$ sweet">
                 <div class="review-img">
-                    <img src="https://i.postimg.cc/HsC5zB8K/Crest-Coffee-Company2.avif"/>
+                    <img src="https://i.postimg.cc/HsC5zB8K/Crest-Coffee-Company2.avif" alt="A light green matcha, half drank, with minimal ice."/>
                 </div>
                 <div class="review-text">
                     <h3>Crest Coffee Company</h3>
@@ -257,23 +187,23 @@
                 </div>
             </div>
 
-            <div class="review-container 1s $$$">
+            <div class="review-container 1s $$$ bitter">
                 <div class="review-img">
-                    <img src="assets/ChaChaMatcha2.HEIC"/> <!-- https://files.catbox.moe/wxeaow.HEIC -->
+                    <img src="assets/ChaChaMatcha2.HEIC" alt="A light green matcha latte with many dark matcha grains speckled throughout the drink. Beneath the drink is a pink napkin that says 'I love you so Matcha!'"/>
                 </div>
                 <div class="review-text">
                     <h3>Cha Cha Matcha</h3>
                     <h3>
-                        <svg width="12px" height="24px"><use href="#svg-star"></use></svg>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
                     </h3>
                     <p>Terrible, bitter, chalky, chunky, and grainy. Akin to drinking sand.</p>
                     <a href="ChaChaMatcha_review.html">Read Full Review ➜</a>
                 </div>
             </div>
 
-            <div class="review-container 1s $$">
+            <div class="review-container 1s $$ sweet">
                 <div class="review-img">
-                    <img src="https://i.postimg.cc/zGNgQp04/Flagels3.avif"/>
+                    <img src="https://i.postimg.cc/zGNgQp04/Flagels3.avif" alt="A very pale green, thick matcha with a sugary foam on its surface."/>
                 </div>
                 <div class="review-text">
                     <h3>Flander's Bagels</h3>
@@ -285,9 +215,9 @@
                 </div>
             </div>
 
-            <div class="review-container 1s $$">
+            <div class="review-container 1s $$ sweet">
                 <div class="review-img">
-                    <img src="https://i.postimg.cc/4NyfxcnK/Stuey-s1.avif"/>
+                    <img src="https://i.postimg.cc/4NyfxcnK/Stuey-s1.avif" alt="A very pale green matcha."/>
                 </div>
                 <div class="review-text">
                     <h3>Stuey's</h3>
@@ -299,9 +229,9 @@
                 </div>
             </div>
 
-            <div class="review-container 5s $$$">
+            <div class="review-container 5s $$$ umami">
                 <div class="review-img">
-                    <img src="https://i.postimg.cc/Qt6MfJVy/Matcha-House2.avif"/>
+                    <img src="https://i.postimg.cc/Qt6MfJVy/Matcha-House2.avif" alt="A smooth dark green matcha. Three-forths of the matcha is already drank."/>
                 </div>
                 <div class="review-text">
                     <h3>Matcha House</h3>
@@ -317,9 +247,9 @@
                 </div>
             </div>
 
-            <div class="review-container 4s $">
+            <div class="review-container 4s $ umami">
                 <div class="review-img">
-                    <img src="https://i.postimg.cc/9fP67zHn/Cream-Sugar1.avif"/>
+                    <img src="https://i.postimg.cc/9fP67zHn/Cream-Sugar1.avif" alt="A dark green to white gradient of matcha to milk."/>
                 </div>
                 <div class="review-text">
                     <h3>Cream & Sugar</h3>
@@ -334,9 +264,9 @@
                 </div>
             </div>
 
-            <div class="review-container 3s $$">
+            <div class="review-container 3s $$ sweet">
                 <div class="review-img">
-                    <img src="https://i.postimg.cc/x1Q8DJ5P/White-Noise1.avif"/>
+                    <img src="https://i.postimg.cc/x1Q8DJ5P/White-Noise1.avif" alt="A nice vibrant green matcha color. The bottom of the cup is a bit darker green where the matcha has settled. There's a lot of ice."/>
                 </div>
                 <div class="review-text">
                     <h3>White Noise</h3>
@@ -350,9 +280,9 @@
                 </div>
             </div>
 
-            <div class="review-container 2s $$$">
+            <div class="review-container 2s $$$ mild">
                 <div class="review-img">
-                    <img src="https://i.postimg.cc/zf0VkznK/Yanni-s1.avif"/>
+                    <img src="https://i.postimg.cc/zf0VkznK/Yanni-s1.avif" alt="A smooth green matcha with ice."/>
                 </div>
                 <div class="review-text">
                     <h3>Yanni's Coffee</h3>
@@ -366,9 +296,9 @@
                 </div>
             </div>
 
-            <div class="review-container 5s $$$">
+            <div class="review-container 5s $$$ umami">
                 <div class="review-img">
-                    <img src="https://i.postimg.cc/YSHtLJZR/Isshiki1.avif"/>
+                    <img src="https://i.postimg.cc/YSHtLJZR/Isshiki1.avif" alt="A rich green to white, matcha to milk gradient with little bits of ice floating near the top of the drink."/>
                 </div>
                 <div class="review-text">
                     <h3>Isshiki</h3>
@@ -384,9 +314,9 @@
                 </div>
             </div>
 
-            <div class="review-container 1s $$">
+            <div class="review-container 1s $$ sweet">
                 <div class="review-img">
-                    <img src="https://i.postimg.cc/NGSFfPs4/Paris-Baguette5.avif"/>
+                    <img src="https://i.postimg.cc/NGSFfPs4/Paris-Baguette5.avif" alt="A pale green matcha with a sugary frothiness to the top."/>
                 </div>
                 <div class="review-text">
                     <h3>Paris Baguette</h3>
@@ -398,9 +328,9 @@
                 </div>
             </div>
             
-            <div class="review-container 3s $$">
+            <div class="review-container 3s $$ umami mild">
                 <div class="review-img">
-                    <img src="https://i.postimg.cc/8zYW3mqz/Ground-Central1.avif"/>
+                    <img src="https://i.postimg.cc/8zYW3mqz/Ground-Central1.avif" alt="A smooth, medium green matcha."/>
                 </div>
                 <div class="review-text">
                     <h3>Ground Central Coffee Company</h3>
@@ -411,6 +341,39 @@
                     </h3>
                     <p>Decent, with a very mild umami flavor. The matcha taste isn't very strong.</p>
                     <a href="GroundCentral_review.html">Read Full Review ➜</a>
+                </div>
+            </div>
+
+            <div class="review-container 3s $$ mild">
+                <div class="review-img">
+                    <img src="[img]" alt="A smooth, pale green matcha with ice floating at the top."/>
+                </div>
+                <div class="review-text">
+                    <h3>Ruhani</h3>
+                    <h3>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                    </h3>
+                    <p>Thick and mild matcha taste.</p>
+                    <a href="Ruhani_review.html">Read Full Review ➜</a>
+                </div>
+            </div>
+
+            <div class="review-container 3s $$$ umami nutty">
+                <div class="review-img">
+                    <img src="[img]" alt="A deep green, but slightly cloudy, matcha. The top of the drink is slightly frothy."/>
+                </div>
+                <div class="review-text">
+                    <h3>Setsugekka</h3>
+                    <h3>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                        <svg width="24px" height="24px"><use href="#svg-star"></use></svg>
+                        <svg width="12px" height="24px"><use href="#svg-star"></use></svg>
+                    </h3>
+                    <p>Watered down, but umami with a hint of nuttiness.</p>
+                    <a href="Setsugekka_review.html">Read Full Review ➜</a>
                 </div>
             </div>
         </div>
@@ -439,31 +402,6 @@
     </body>
 </html>
 
-
-<script>
-    function dropDownStars(){
-        document.getElementById("dropDownStars").classList.toggle("show");
-    }
-    function dropDownPrice(){
-        document.getElementById("dropDownPrice").classList.toggle("show");
-    }
-    function dropDownFlavor(){
-        document.getElementById("dropDownFlavor").classList.toggle("show");
-    }
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-        if (!event.target.matches('.drop-btn')) {
-            var dropdowns = document.getElementsByClassName("drop-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
-</script>
 
 <script>
 
@@ -537,6 +475,23 @@ function filterResults(filters) {
         hiddenElems.push(el);
       }
     }
+
+    if (filters.flavor.length > 0) {
+      var isHidden = true;
+
+      for (var j = 0; j < filters.flavor.length; j++) {
+        var filter = filters.flavor[j];
+
+        if (el.classList.contains(filter)) {
+          isHidden = false;
+          break;
+        }
+      }
+
+      if (isHidden) {
+        hiddenElems.push(el);
+      }
+    }
   }
 
   for (var i = 0; i < rElems.length; i++) {
@@ -551,54 +506,5 @@ function filterResults(filters) {
     hiddenElems[i].style.display = "none";
   }
 }
-    
-
-
-
-    /*
-    // FILTER CAFES BY PREFERENCES
-    filterSelection("all");
-    function filterSelection(c){
-        var x, i;
-        x = document.getElementsByClassName("review-container");
-
-        if (c == "all") c = "";
-        for (i = 0; i < x.length; i++){
-            removeClass(x[i], "show");
-            if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
-        }
-    }
-
-    function addClass(element, name){
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++){
-            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-        }
-    }
-    function removeClass(element, name){
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++){
-            while (arr1.indexOf(arr2[i]) > -1) {
-            arr1.splice(arr1.indexOf(arr2[i]), 1);     
-            }
-        }
-        element.className = arr1.join(" ");
-    }
-    // Add active class to the current button (highlight it)
-    var btnContainer = document.getElementById("sortBtns");
-    var btns = btnContainer.getElementsByClassName("btn");
-
-    for (var i = 0; i < btns.length; i++){
-        btns[i].addEventListener("click", function(){
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-        });
-    }
-    */
 
 </script>
