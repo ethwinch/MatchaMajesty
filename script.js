@@ -1,5 +1,5 @@
 
-    var themeMode = localStorage.getItem("themeColor", "dark"); // assign themeColor as dark as default
+    let themeMode = localStorage.getItem("themeColor", "dark"); // assign themeColor as dark as default
     const updateTheme = () => {
         if (themeMode == "light"){
             themeMode = "dark";
@@ -11,10 +11,10 @@
     };
 
     function toggleTheme(){
-        var element = document.body;
+        let element = document.body;
         element.classList.toggle("themeColor");
 
-        var x = document.getElementById("themeColor");
+        let x = document.getElementById("themeColor");
         if (x.innerHTML === "Light Mode") {
             x.innerHTML = "Dark Mode";
         } else {
@@ -24,8 +24,8 @@
 
     /* Make theme persistant */
     function themeCheck(){
-        var themeMode = localStorage.getItem("themeColor");
-        var x = document.getElementById("themeColor");
+        let themeMode = localStorage.getItem("themeColor");
+        let x = document.getElementById("themeColor");
         if(themeMode == "light"){
             toggleTheme();
         }
@@ -40,7 +40,7 @@
 
     
 
-    var changeLocation = function(c){
+    let changeLocation = function(c){
         if(c=='ny'){
             map.setView(new L.LatLng(40.785091, -73.968285), 13);
         }

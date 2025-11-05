@@ -76,7 +76,7 @@ ul.nav-links{
     display: flex;
     margin: 24px;
     padding: 0;
-    background-color: var(--accent1);
+    background-color: var(--accent3);
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -94,13 +94,13 @@ ul.nav-links > li > a{
   padding: 1vw 2vw;
 }
 .nav-links > li > a.active{
-  background-color: var(--accent3);
+  background-color: var(--accent1);
   color: #1C150E;
   /*color: var(--lighttone1);*/
   border-radius: 20px;
 }
 .nav-links > li > a:hover{
-  background-color: var(--accent3);
+  background-color: var(--accent1);
   color: #1C150E;
   /*color: var(--lighttone1);*/
   border-radius: 20px;
@@ -115,7 +115,7 @@ ul.nav-links > li > a{
   text-shadow: 1.3px 1.3px rgba(0, 0, 0, 0.2), 1px 5px rgba(0, 0, 0, 0.2);
 }
 .hero-image{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.squarespace-cdn.com%2Fcontent%2Fv1%2F56a19dc589a60afe613cef70%2F1579834767427-ZF8BU3MRHG6YVQAK43XM%2Fimage-asset.jpeg&f=1&nofb=1&ipt=c32c4bf427f638a35c6a6a3c1577274f1d29f842ce6486d01573082f83b81323");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1566373049939-704ea187ef98?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1171");
   mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,0));
   height: 32rem;
   background-position: center;
@@ -130,7 +130,7 @@ ul.nav-links > li > a{
 
 .new-review{
   border-style: double;
-  border-color: var(--accent3);
+  border-color: var(--accent1);
   border-radius: 8px;
   width: 100%;
   padding: 1px 0 1px 0;
@@ -153,7 +153,7 @@ ul.nav-links > li > a{
 
 
 .footer{
-  background-color: var(--darktone1);
+  background-color: var(--accent3);
   width: 100%;
   text-align: center;
 }
@@ -189,7 +189,7 @@ ul.nav-links > li > a{
   text-align: center;
   float: left;
   width: 46%;
-  padding-right: 24px;
+  padding-right: 3rem;
 }
 .map-key-right{
   text-align: center;
