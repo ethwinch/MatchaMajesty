@@ -158,9 +158,15 @@ ul.nav-links > li > a{
   width: 100%;
   text-align: center;
   margin-top: 4rem;
+
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.footer-logo{
+  padding: 2rem 0 2rem 0;
 }
 .footer-text{
-  padding: 2rem 16rem 2rem 16rem;
+  padding: 2rem;
 }
 
 
