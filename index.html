@@ -1,0 +1,233 @@
+<!--
+<?php
+    session_start();
+?>
+-->
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Matcha Majesty</title>
+        <link rel="icon" type="image/x-icon" href="assets2/Logo/favicon.png">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="script.js"></script>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+
+        <meta name="msvalidate.01" content="81732F518DF20105826F3453821FBBE7" /> <!-- Bing Indexing Verification -->
+        <meta name="google-adsense-account" content="ca-pub-5708330331910324"> <!-- Google Adsense Verification -->
+
+        <meta name="description" content="You're guide to the best Matcha in NYC & NJ!">
+        <meta name="keywords" content="matcha, latte, reviews, umami, japanese tea, 抹茶, まっちゃ">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <div class="hero-container">
+            <div class="hero-image">
+                <div class="nav">
+                    <ul class="nav-links">
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                    </ul>
+                    <ul class="nav-links">
+                        <li><a id="themeColor" style="cursor: pointer;" onclick="updateTheme()">Light Mode</a></li>
+                    </ul>
+                </div>
+                <div class="hero-text">
+                    <h1>MATCHA MAJESTY</h1>
+                    <h2>Your guide in finding the best cup of Matcha.</h2>
+                </div>
+            </div>
+        </div>
+        <div class="body-text">
+            <div data-nosnippet>
+                <a href="reviews/ChaChaMatcha_review.html" class="new-review">
+                    <h4><i>Check out the latest review ➜</i> Cha Cha Matcha, REVISITED!</h4>
+                </a>
+            </div>
+
+            <p><b>It's time to spill the tea on matcha!</b> Since matcha's rise in popularity 
+            many places have tried to cash in on the hype. Unfortunately, most of these places never bothered to 
+            learn how to make a decent cup. After way too many bad matchas and bad recommendations from people who love the 
+            flavor of the syrup more than that of the matcha, I began rating matcha in the notes app on my phone. Now, these 
+            ratings are on this website for all to see!</p>
+            <p>Search the map below to see the places I've reviewed! So far, I've only reviewed places in NYC and NJ. Hopefully I can branch out to other states some day.</p>
+
+            <div class="note">
+                <p><i><b>Important Note:</b> My reviews are based on the natural matcha flavor in latte form. This means I don't buy lattes with lavendar, strawberry, vanilla or any other kind of sweetener. I order the standard matcha latte which sometimes comes already sweetened with agave or honey, but I take the unsweetened option if they inform me that they normally add sweetener by default. The point is to review the flavor of the MATCHA, not the sweetener.</i></p>
+                <p><i>Also, I am not a matcha expert! I'm just a matcha lover sharing my matcha related thoughts and opinions on my own humble corner of the internet. If you disagree with my rating, that's fine, just be respectful! ♡</i></p>
+            </div>
+            
+            <div class="map-key">
+                <div class="map-key-left">
+                    <p>Price is based off a size Small or the smallest size available.</p>
+                    <p><svg height="16px" width="16px" version="1.1" id="svg-star" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 47.94 47.94" xml:space="preserve" fill="#000000">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier"> 
+                            <path id="svg-star" style="fill:#f0b62d;" d="M26.285,2.486l5.407,10.956c0.376,0.762,1.103,1.29,1.944,1.412l12.091,1.757 c2.118,0.308,2.963,2.91,1.431,4.403l-8.749,8.528c-0.608,0.593-0.886,1.448-0.742,2.285l2.065,12.042 c0.362,2.109-1.852,3.717-3.746,2.722l-10.814-5.685c-0.752-0.395-1.651-0.395-2.403,0l-10.814,5.685 c-1.894,0.996-4.108-0.613-3.746-2.722l2.065-12.042c0.144-0.837-0.134-1.692-0.742-2.285l-8.749-8.528 c-1.532-1.494-0.687-4.096,1.431-4.403l12.091-1.757c0.841-0.122,1.568-0.65,1.944-1.412l5.407-10.956 C22.602,0.567,25.338,0.567,26.285,2.486z"></path>
+                        </g>
+                    </svg> Out of 5 Stars</p>
+                </div>
+                <div class="map-key-right">
+                    <p>Matchas with a sweet flavor are marked with a 🍰, otherwise assume an umami flavor.</p>
+                </div>
+            </div>
+            
+            <h3 style="text-align: center; padding: 2rem 0 2rem 0;">Search reviews by state.</h3>
+            <div class="location-btns">
+                <button onclick="changeLocation('ny')">New York City</button>
+                <button onclick="changeLocation('nj')">New Jersey</button>
+            </div>
+        </div>
+
+        <div id="map"></div>
+
+        <!-- AD SPACE -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5708330331910324"
+            crossorigin="anonymous"></script>
+        <!-- banner-ad -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-5708330331910324"
+            data-ad-slot="6285450821"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        <div class="footer">
+            <div class="footer-logo">
+                <img src="assets2/Logo/MatchaMajestyLogo.PNG" style="max-width: 180px;"/>
+            </div>
+            <div class="footer-text">
+                <p>&copy All rights reserved.</p>
+                <p>Header image by Matcha & CO</p>
+                <p>Contact me at MatchaMajesty@gmail.com</p>
+                <br>
+                <p><i>I am not affiliated or endorsed by any individual, business or product. I do not accept sponsorships, free drinks/food, affiliates or any other form of financial or social incentives. I will never accept matcha or cafe specific partnerships or sponsors as I am committed to keeping my reviews as honest as possible.</i></p>
+            </div>
+        </div>
+    </body>
+
+    
+    <!--
+    <svg width="16px" height="16px"><use href="#svg-star"></use></svg>
+    -->
+    
+</html>
+
+
+<script>
+    
+    var map = L.map('map').setView([40.785091, -73.968285], 13); // coordinates set to Central Park South
+
+    // MARKERS //
+    /*
+    var marker = L.marker([40.804732, -73.951249]).addTo(map);
+    marker.bindPopup('<b>The Monkey Cup</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><br>$5.75 🍰<br><a href="reviews/TheMonkeyCup_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([40.789854, -73.948267]).addTo(map);
+    marker.bindPopup('<b>Frenchy</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><br>$5.50 S<a href="reviews/Frenchy_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([40.787010, -74.780380]).addTo(map);
+    marker.bindPopup('<b>The Coffee Potter</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><br>$5.50 🍰<a href="reviews/CoffeePotter_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([38.970557, -74.842637]).addTo(map);
+    marker.bindPopup('<b>The Turtle Gut</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><br>$6.00 S<a href="reviews/TurtleGut_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([38.977747, -74.832046]).addTo(map);
+    marker.bindPopup('<b>Crest Coffee Company</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="9px" height="16px"><use href="#svg-star"></use></svg><br>$5.50 🍰<a href="reviews/CrestCoffeeCompany_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([40.744621, -73.988701]).addTo(map);
+    marker.bindPopup('<b>Cha Cha Matcha</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><br>$6.00<a href="reviews/ChaChaMatcha_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([40.831252, -74.708947]).addTo(map);
+    marker.bindPopup('<b>Flanders Bagels</b><br><svg width="5px" height="16px"><use href="#svg-star"></use></svg><br>$5.18 M (only size offered) 🍰<a href="reviews/Flagels_review.html">Full Review</a>').openPopup();
+
+    
+    //var marker = L.marker([40.716679, -73.989550]).addTo(map);
+    //marker.bindPopup('<b>Dunkin Donuts</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><br>$$').openPopup();
+
+    //var marker = L.marker([40.719743, -73.999127]).addTo(map);
+    //marker.bindPopup('<b>Starbucks</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><br>$$').openPopup();
+
+    //var marker = L.marker([40.803414, -74.019102]).addTo(map);
+    //marker.bindPopup('<b>Wawa</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="9px" height="16px"><use href="#svg-star"></use></svg><br>$$').openPopup();
+    
+   
+    var marker = L.marker([38.978187, -74.822405]).addTo(map);
+    marker.bindPopup('<b>Stuey\'s</b><br><svg width="5px" height="16px"><use href="#svg-star"></use></svg><br>$5.51 🍰<a href="reviews/Stueys_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([40.827071, -74.582861]).addTo(map);
+    marker.bindPopup('<b>Cream & Sugar</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><br>$4.95<a href="reviews/Cream&Sugar_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([40.727852, -73.982224]).addTo(map);
+    marker.bindPopup('<b>Matcha House</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><br>$7.25<a href="reviews/MatchaHouse_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([40.770149, -73.991928]).addTo(map);
+    marker.bindPopup('<b>White Noise</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="9px" height="16px"><use href="#svg-star"></use></svg><br>$6.00 🍰<a href="reviews/WhiteNoise_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([40.739793, -73.999015]).addTo(map);
+    marker.bindPopup('<b>Yanni\'s</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="9px" height="16px"><use href="#svg-star"></use></svg><br>$7.62 S<a href="reviews/Yannis_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([40.767053, -73.982867]).addTo(map);
+    marker.bindPopup('<b>Paris Baguette</b><br><svg width="8px" height="16px"><use href="#svg-star"></use></svg><br>$6.00 S 🍰<a href="reviews/ParisBaguette_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([40.763593, -73.984866]).addTo(map);
+    marker.bindPopup('<b>Ground Central Coffee Company</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><br>$5.40<a href="reviews/GroundCentral_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([40.742603, -74.000038]).addTo(map);
+    marker.bindPopup('<b>Isshiki</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><br>$7.00<a href="reviews/Isshiki_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([40.685408, -73.980281]).addTo(map);
+    marker.bindPopup('<b>Ruhani</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><br>$6.00 S<a href="reviews/Ruhani_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([40.727234, -73.986649]).addTo(map);
+    marker.bindPopup('<b>Setsugekka</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="9px" height="16px"><use href="#svg-star"></use></svg><br>$10.25<a href="reviews/Setsugekka_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([40.765098, -73.987358]).addTo(map);
+    marker.bindPopup('<b>Thē Soirēe</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="9px" height="16px"><use href="#svg-star"></use></svg><br>$7.75 - $8.75<a href="reviews/TheSoire_review.html">Full Review</a>').openPopup();
+
+    var marker = L.marker([40.799000, -73.941040]).addTo(map);
+    marker.bindPopup('<b>Super Nice Coffee and Bakery</b><br><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><svg width="16px" height="16px"><use href="#svg-star"></use></svg><br>$6.00 S (8oz)<a href="reviews/SuperNiceCoffeeAndBakery_review.html">Full Review</a>').openPopup();
+    */
+
+
+    (async function generateReviews(){
+        let reviewObjs = await fetch('https://matcha-majesty.github.io/reviewData.json');
+        const result = await reviewObjs.json();
+        //console.log(result);
+
+        result.reviewData.forEach((value, index) => {
+            console.log(value.store);
+            var marker = `L.marker([${value.long}, ${value.lat}]).addTo(map)`;
+            marker.bindPopup(`<b>${value.store}</b><br>${value.stars}<br>${value.amount} ${value.size}<a href="${value.reviewLink}">Full Review</a>`).openPopup();
+            //console.log(`marker.bindPopup(<b>${value.store}</b><br>${value.starsSVG}<br>${value.amount} ${value.size}<a href="${value.reviewLink}">Full Review</a>).openPopup()`);
+
+            /*
+            var marker = `L.marker([${value.long}, ${value.lat}]).addTo(map)`;
+            var popup = L.popup().setContent(`<b>${value.store}</b><br>${value.stars}<br>${value.amount} ${value.size}<a href="${value.reviewLink}">Full Review</a>`);
+            marker.bindPopup(popup).openPopup();
+            */
+        });
+    })();
+
+
+
+
+    // copy right
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+</script>
+

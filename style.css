@@ -147,10 +147,6 @@ ul.nav-links > li > a{
   text-shadow: 0 0 6px var(--accent1);
 }
 
-.body-text{
-  margin: 4rem 16rem 4rem 16rem;
-  line-height: 2;
-}
 
 
 .footer{
@@ -160,13 +156,6 @@ ul.nav-links > li > a{
   margin-top: 4rem;
 
   display: grid;
-  grid-template-columns: auto auto auto auto;
-}
-.footer-logo{
-  padding: 2rem 0 2rem 0;
-}
-.footer-text{
-  padding: 2rem;
 }
 
 
@@ -236,7 +225,6 @@ button:active{
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 1rem;
-  margin: 0 4rem 2rem 4rem;
   padding: 0 1rem 1rem 1rem;
 }
 .filter-grid-head{
@@ -264,10 +252,8 @@ div.filter div.filter-grid div.filter-grid-flavor div.flavor div.checkbox input{
 
 .review-list{
   display: grid;
-  grid-template-columns: auto auto;
   column-gap: 2rem;
   row-gap: 8px;
-  margin: 4rem 4rem 4rem 4rem;
 }
 .review-container{
   /*display: none;*/
@@ -288,15 +274,14 @@ div.filter div.filter-grid div.filter-grid-flavor div.flavor div.checkbox input{
   display: table;
 }
 .review-container > .review-img{
-  height: 250px;
+  height: 100%;
   width: 40%;
   float: left;
   overflow: hidden;
 }
 .review-container > .review-img > img{
-  width: 100%;
-  height: 100%;
   object-fit: cover;
+  width: 100%;
 }
 .review-container > .review-text{
   color: var(--lighttone1);
@@ -363,7 +348,7 @@ div.filter div.filter-grid div.filter-grid-flavor div.flavor div.checkbox input{
 
 .img-container{
   margin-top: 2rem;
-  display: flex;
+  display: block;
   justify-content: space-between;
 }
 .body-text > .img-container > img{
@@ -375,10 +360,62 @@ div.filter div.filter-grid div.filter-grid-flavor div.flavor div.checkbox input{
 
 
 
+/* Tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted var(--midtone2); /* Add dots under the hoverable text */
+  cursor: pointer;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 130px;
+  background-color: var(--darktone2);
+  color: var(--lighttone1);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1; /* display tooltip above content */
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
 
+/* DESKTOP */
+@media (min-width: 900px){
+  .body-text{
+    margin: 4rem 16rem 4rem 16rem;
+    line-height: 2;
+  }
 
-/*PHONES & TABLETS*/
+  .footer{
+    grid-template-columns: auto auto auto auto;
+  }
+  .footer-logo{
+    padding: 2rem 0 2rem 0;
+  }
+  .footer-text{
+    padding: 2rem;
+  }
+
+
+  .filter-grid{
+    margin: 0 4rem 2rem 4rem;
+  }
+  
+
+  .review-list{
+    grid-template-columns: auto auto;
+    margin: 4rem 4rem 4rem 4rem;
+  }
+}
+
+
+/* PHONES & TABLETS */
 @media (max-width: 900px){
   #map{
     margin: auto;
@@ -394,10 +431,17 @@ div.filter div.filter-grid div.filter-grid-flavor div.flavor div.checkbox input{
   .body-text{
     margin: 2rem 1rem 2rem 1rem;
   }
+  .footer{
+    grid-template-columns: auto;
+  }
+  .footer-logo{
+    padding-top: 2rem;
+  }
   .footer-text{
   padding: 2rem 1rem 2rem 1rem;
   }
   .review-list{
+    display: block;
     grid-template-columns: auto;
     margin: 4rem 1rem 0 1rem;
   }
@@ -406,8 +450,7 @@ div.filter div.filter-grid div.filter-grid-flavor div.flavor div.checkbox input{
     height: 150px;
   }
   .review-container{
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
     margin: 1rem 0 1rem 0;
   }
   .location-btns > button{
@@ -423,5 +466,6 @@ div.filter div.filter-grid div.filter-grid-flavor div.flavor div.checkbox input{
   }
   .review-container > .review-img{
     width: 100%;
+    max-height: 400px;
   }
 }
