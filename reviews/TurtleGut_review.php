@@ -81,6 +81,36 @@
                     <input type="submit" value="Publish Comment"/>
                 </form>
             </div>
+            <div class="comments">
+                <?php
+                    // Grab all comments for THIS page based on page ID
+                    $stmt = $pdo->prepare('SELECT * FROM comments WHERE page_id = ? ORDER BY submit_date DESC'); // sanitize/prepare statement
+                    $stmt->execute([$_GET['page_id']]);
+                    $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                    foreach($comments as $comment){
+                        if($comment['parent_id'] == $parent_id){
+                            $html .= '
+                            <div class="comment">
+                                <div class="icon">
+                                    <span style="background-color:' . $comment['display_name'] . '">' . htmlspecialchars(strtoupper(substr($comment['display_name'], 0, 1)), ENT_QUOTES) . '</span>
+                                </div>
+                                <div class="con>
+                                    <div>
+                                        <h3 class="name">' . htmlspecialchars($comment['display_name'], ENT_QUOTES) . '</h3>
+                                    </div>
+                                    <p class="content">' . nl2br(htmlspecialchars($comment['content'], ENT_QUOTES)) . '</p>
+                                    <a class="reply_comment_btn" href="#" data-comment-id="' . $comment['id'] . '">Reply</a>' . show_write_comment_form($comment['id']) . '
+                                    <div class="replies">
+                                    ' . show_comments($comments, $comment['id']) . '
+                                    </div>
+                                </div>
+                            </div>
+                            ';
+                        }
+                    }
+                ?>
+            </div>
             <!--
             <div class="comments"></div>
             <script src="populate_comments">const comments_page_id = 1;</script>
