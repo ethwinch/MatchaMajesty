@@ -7,4 +7,5 @@
 <p>This site is a constant WIP while I update it and review more matcha places. I'm constantly adding features and improvements.</p>
 <p>Currently, I am working on giving visitors the ability to leave their own reviews under mine. I have already implemented this feature on localhost, but am struggling to figure out how to make it live.</p>
 <p>For this site, I used the leaflet Open Streets map API to mark reviewed locations on a map. I've also stored review information in a JSON file and loaded the info into HTML using javaScript.</p>
+<p>I've implemented a light and dark mode and utilized local storage to remember user preferences across pages.</p>
 <p>I have learned a lot while making this site and continue to learn as I get inspired to add new features.</p>
