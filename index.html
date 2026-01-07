@@ -31,15 +31,7 @@
     <body>
         <div class="hero-container">
             <div class="hero-image">
-                <div class="nav">
-                    <ul class="nav-links">
-                        <li><a class="active" href="index.html">Home</a></li>
-                        <li><a href="reviews.html">Reviews</a></li>
-                    </ul>
-                    <ul class="nav-links">
-                        <li><a id="themeColor" style="cursor: pointer;" onclick="updateTheme()">Light Mode</a></li>
-                    </ul>
-                </div>
+                <div id="navigation"></div>
                 <div class="hero-text">
                     <h1>MATCHA MAJESTY</h1>
                     <h2>Your guide in finding the best cup of Matcha.</h2>
@@ -104,18 +96,7 @@
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
 
-        <div class="footer">
-            <div class="footer-logo">
-                <img src="assets2/Logo/MatchaMajestyLogo.PNG" style="max-width: 180px;"/>
-            </div>
-            <div class="footer-text">
-                <p>&copy All rights reserved.</p>
-                <p>Header image by Matcha & CO</p>
-                <p>Contact me at MatchaMajesty@gmail.com</p>
-                <br>
-                <p><i>I am not affiliated or endorsed by any individual, business or product. I do not accept sponsorships, free drinks/food, affiliates or any other form of financial or social incentives. I will never accept matcha or cafe specific partnerships or sponsors as I am committed to keeping my reviews as honest as possible.</i></p>
-            </div>
-        </div>
+        <div id="footer"></div>
     </body>
 
     
@@ -124,6 +105,8 @@
     -->
     
 </html>
+
+<script src="loadHeaderFooter.js"></script>
 
 
 <script>

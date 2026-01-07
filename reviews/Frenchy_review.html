@@ -16,15 +16,7 @@
     <body>
         <div class="hero-container">
             <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://s3-media0.fl.yelpcdn.com/bphoto/r6SKi1Yw6W9XWuwT8SG5jA/o.jpg');">
-                <div class="nav">
-                    <ul class="nav-links">
-                        <li><a class="active" href="../index.html">Home</a></li>
-                        <li><a href="../reviews.html">Reviews</a></li>
-                    </ul>
-                    <ul class="nav-links">
-                        <li><a id="themeColor" style="cursor: pointer;" onclick="updateTheme()">Light Mode</a></li>
-                    </ul>
-                </div>
+                <div id="navigation"></div>
                 <div class="hero-text">
                     <h1>MATCHA MAJESTY</h1>
                     <h2>Frenchy Review</h2>
@@ -71,14 +63,7 @@
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
 
-        <div class="footer">
-            <div class="footer-logo">
-                <img src="../assets2/Logo/MatchaMajestyLogo.PNG" style="max-width: 180px;"/>
-            </div>
-            <div class="footer-text">
-                <p>All rights reserved.</p>
-                <br>
-                <p>Contact me at MatchaMajesty@gmail.com</p>
-            </div>
-        </div>
+        <div id="footer"></div>
     </body>
+
+    <script type="text/javascript" src="../loadHeaderFooter.js"></script>

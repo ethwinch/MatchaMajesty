@@ -17,15 +17,7 @@
     <body>
         <div class="hero-container">
             <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F2acee7fe0a41f28b80b9.cdn6.editmysite.com%2Fuploads%2Fb%2F2acee7fe0a41f28b80b945cb38beb0dda914e9932ff3b6c33e6f0fbb7b717c6a%2FIMG_9946_1684360485.jpg%3Fwidth%3D2400%26optimize%3Dmedium&f=1&nofb=1&ipt=dd72aa7b2a72a19f95d7c9ff4f5f20ec41a3e544a031f3796e4cb5a26d0c8819');">
-                <div class="nav">
-                    <ul class="nav-links">
-                        <li><a class="active" href="../index.html">Home</a></li>
-                        <li><a href="../reviews.html">Reviews</a></li>
-                    </ul>
-                    <ul class="nav-links">
-                        <li><a id="themeColor" style="cursor: pointer;" onclick="updateTheme()">Light Mode</a></li>
-                    </ul>
-                </div>
+                <div id="navigation"></div>
                 <div class="hero-text">
                     <h1>MATCHA MAJESTY</h1>
                     <h2>The Turtle Gut Review</h2>
@@ -119,14 +111,8 @@
 
 
 
-        <div class="footer">
-            <div class="footer-logo">
-                <img src="../assets2/Logo/MatchaMajestyLogo.PNG" style="max-width: 180px;"/>
-            </div>
-            <div class="footer-text">
-                <p>All rights reserved.</p>
-                <br>
-                <p>Contact me at MatchaMajesty@gmail.com</p>
-            </div>
-        </div>
+        <div id="footer"></div>
     </body>
+</html>
+
+ <script type="text/javascript" src="../loadHeaderFooter.js"></script>
