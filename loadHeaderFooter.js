@@ -33,9 +33,15 @@ async function loadHTML(elementID, filePath){
 
 // Load Nav and Footer after DOM loads
 document.addEventListener('DOMContentLoaded', () => {
+    // Load from root. Won't work on local bc root is not MatchaMajesty directory.
     loadHTML('navigation', '/navigation.html');
     loadHTML('footer', '/footer.html');
 
+    // TESTING FOR INDEX.HTML AND REVIEWS.HTML
+    //loadHTML('navigation', 'navigation.html');
+    //loadHTML('footer', 'footer.html');
+
+    // TESTING FOR REVIEW PAGES
     //loadHTML('navigation', '../navigation.html');
     //loadHTML('footer', '../footer.html');
 })
