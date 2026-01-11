@@ -5,7 +5,6 @@
 <p>Hosted at: <a href="https://matcha-majesty.github.io/">https://matcha-majesty.github.io/</a></p>
 <br>
 <p>This site is a constant WIP while I add new features and review more matcha places.</p>
-<p>Currently, I am working on giving visitors the ability to leave their own reviews under mine. I have already implemented this feature on localhost, but am struggling to figure out how to make it live.</p>
 <b>Features:</b>
 <ul>
   <li>Uses leaflet Open Streets map API to mark reviewed locations on a map.</li>
